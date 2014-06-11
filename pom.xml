@@ -5,6 +5,7 @@
 	<!-- Artifact Information -->
 	<groupId>org.evilco.mc.protocol</groupId>
 	<artifactId>parent</artifactId>
+	<packaging>pom</packaging>
 	<version>1.7-SNAPSHOT</version>
 
 	<!-- Artifact metadata -->
@@ -119,8 +120,17 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Netty -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>5.0.0.Alpha1</version>
+		</dependency>
 	</dependencies>
 
 	<!-- Sub-Modules -->
-	<modules></modules>
+	<modules>
+		<module>common</module>
+	</modules>
 </project>
