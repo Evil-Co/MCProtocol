@@ -17,11 +17,17 @@
 package org.evilco.mc.protocol.common;
 
 import io.netty.buffer.ByteBuf;
+import org.evilco.mc.protocol.common.error.PacketException;
 
 /**
  * Represents a packet.
  */
 public interface IPacket {
+
+	/**
+	 * Intercepts the packet data.
+	 */
+	public void intercept () throws PacketException;
 
 	/**
 	 * Serializes a packet.
