@@ -23,20 +23,54 @@ public enum ProtocolState {
 	/**
 	 * Initial state to ensure server and client can talk to each other.
 	 */
-	HANDSHAKE,
+	HANDSHAKE {
+		{
+
+		}
+	},
 
 	/**
 	 * Status state to transmit information for the server listing.
 	 */
-	STATUS,
+	STATUS {
+		{
+
+		}
+	},
 
 	/**
 	 * Login state which is used to exchange authentication and encryption parameters.
 	 */
-	LOGIN,
+	LOGIN {
+		{
+
+		}
+	},
 
 	/**
 	 * Game state which handles all in-game packets used to synchronize client and server.
 	 */
-	GAME
+	GAME {
+		{
+
+		}
+	};
+
+	/**
+	 * Stores the inbound packet registry.
+	 */
+	public final IProtocolRegistry INBOUND;
+
+	/**
+	 * Stores the outbound packet registry.
+	 */
+	public final IProtocolRegistry OUTBOUND;
+
+	/**
+	 * Constructs a new ProtocolState instance.
+	 */
+	private ProtocolState () {
+		INBOUND = new SimpleProtocolRegistry (this);
+		OUTBOUND = new SimpleProtocolRegistry (this);
+	}
 }
