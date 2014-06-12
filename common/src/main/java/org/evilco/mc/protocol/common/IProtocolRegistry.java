@@ -62,4 +62,12 @@ public interface IProtocolRegistry {
 	 * @return The state.
 	 */
 	public ProtocolState getState ();
+
+	/**
+	 * Registers a new packet.
+	 * @param packetID The packet identifier.
+	 * @param packetClass The packet class.
+	 * @throws UnsupportedOperationException
+	 */
+	public void register (int packetID, Class<? extends IPacket> packetClass) throws UnsupportedOperationException;
 }
