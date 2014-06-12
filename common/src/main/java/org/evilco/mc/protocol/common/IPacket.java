@@ -25,11 +25,6 @@ import org.evilco.mc.protocol.common.error.PacketException;
 public interface IPacket {
 
 	/**
-	 * Intercepts the packet data.
-	 */
-	public void intercept () throws PacketException;
-
-	/**
 	 * Serializes a packet.
 	 * @param out The output buffer.
 	 */
