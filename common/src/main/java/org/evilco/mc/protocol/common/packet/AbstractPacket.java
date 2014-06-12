@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.evilco.mc.protocol.common;
+package org.evilco.mc.protocol.common.packet;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
