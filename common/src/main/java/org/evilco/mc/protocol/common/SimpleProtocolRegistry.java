@@ -36,13 +36,13 @@ public class SimpleProtocolRegistry implements IProtocolRegistry {
 	 * Stores a registry of packets.
 	 */
 	@Getter
-	protected final Map<Integer, Class<? extends IPacket>> packetRegistry = new HashMap<Integer, Class<? extends IPacket>> ();
+	protected Map<Integer, Class<? extends IPacket>> packetRegistry = new HashMap<Integer, Class<? extends IPacket>> ();
 
 	/**
 	 * Stores a registry of packets (reversed).
 	 */
 	@Getter
-	protected final Map<Class<? extends IPacket>, Integer> reversePacketRegistry = new HashMap<Class<? extends IPacket>, Integer> ();
+	protected Map<Class<? extends IPacket>, Integer> reversePacketRegistry = new HashMap<Class<? extends IPacket>, Integer> ();
 
 	/**
 	 * Stores the corresponding protocol state.
@@ -56,6 +56,18 @@ public class SimpleProtocolRegistry implements IProtocolRegistry {
 	 */
 	public SimpleProtocolRegistry (@NonNull ProtocolState state) {
 		this.state = state;
+	}
+
+	/**
+	 * Copies a SimpleProtocolRegistry instance.
+	 * @param state The protocol state.
+	 * @param registry The original registry.
+	 */
+	public SimpleProtocolRegistry (@NonNull ProtocolState state, @NonNull SimpleProtocolRegistry registry) {
+		this.state = state;
+
+		this.packetRegistry = registry.getPacketRegistry ();
+		this.reversePacketRegistry = registry.getReversePacketRegistry ();
 	}
 
 	/**
