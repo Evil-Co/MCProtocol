@@ -17,6 +17,7 @@
 package org.evilco.mc.protocol.common;
 
 import io.netty.buffer.ByteBuf;
+import org.evilco.mc.protocol.common.error.PacketException;
 import org.evilco.mc.protocol.common.error.UnknownPacketException;
 import org.evilco.mc.protocol.common.packet.IPacket;
 
@@ -31,7 +32,7 @@ public interface IProtocolRegistry {
 	 * @param buffer The packet data.
 	 * @return The packet instance.
 	 */
-	public IPacket createPacket (Class<? extends IPacket> packetClass, ByteBuf buffer);
+	public IPacket createPacket (Class<? extends IPacket> packetClass, ByteBuf buffer) throws PacketException;
 
 	/**
 	 * Returns the packet class based on the packet identifier.

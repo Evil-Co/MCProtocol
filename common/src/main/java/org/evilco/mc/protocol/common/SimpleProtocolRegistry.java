@@ -20,6 +20,7 @@ import io.netty.buffer.ByteBuf;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.SneakyThrows;
+import org.evilco.mc.protocol.common.error.PacketException;
 import org.evilco.mc.protocol.common.error.UnknownPacketException;
 import org.evilco.mc.protocol.common.packet.IPacket;
 
@@ -75,7 +76,7 @@ public class SimpleProtocolRegistry implements IProtocolRegistry {
 	 */
 	@Override
 	@SneakyThrows
-	public IPacket createPacket (@NonNull Class<? extends IPacket> packetClass, ByteBuf buffer) {
+	public IPacket createPacket (@NonNull Class<? extends IPacket> packetClass, ByteBuf buffer) throws PacketException {
 		// find constructor
 		Constructor<? extends IPacket> constructor = packetClass.getDeclaredConstructor (ByteBuf.class);
 
