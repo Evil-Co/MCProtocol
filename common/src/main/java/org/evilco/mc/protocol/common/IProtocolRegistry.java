@@ -46,7 +46,15 @@ public interface IProtocolRegistry {
 	 * @param packetClass The packet class.
 	 * @return The packet identifier.
 	 */
-	public int getPacketID (IPacket packetClass) throws UnknownPacketException;
+	public int getPacketID (Class<? extends IPacket> packetClass) throws UnknownPacketException;
+
+	/**
+	 * Returns the packet identifier assigned to a specific packet.
+	 * @param packet The packet object.
+	 * @return The packet identifier.
+	 * @throws UnknownPacketException
+	 */
+	public int getPacketID (IPacket packet) throws UnknownPacketException;
 
 	/**
 	 * Returns the protocol state.
