@@ -17,7 +17,6 @@
 package org.evilco.mc.protocol.common;
 
 import io.netty.buffer.ByteBuf;
-import org.evilco.mc.protocol.common.error.PacketException;
 
 /**
  * Represents a packet.
