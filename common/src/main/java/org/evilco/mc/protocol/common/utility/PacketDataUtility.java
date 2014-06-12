@@ -27,6 +27,19 @@ import lombok.NonNull;
 public class PacketDataUtility {
 
 	/**
+	 * Returns the size of a variable integer.
+	 * @param value The value.
+	 * @return The size.
+	 */
+	public int getVariableIntegerSize (int value) {
+		if ((value & 0xFFFFFF80) == 0) return 1;
+		if ((value & 0xFFFFC000) == 0) return 2;
+		if ((value & 0xFFE00000) == 0) return 3;
+		if ((value & 0xF0000000) == 0) return 4;
+		return 5;
+	}
+
+	/**
 	 * Reads a string with a dynamic length.
 	 * @param in The input buffer.
 	 * @return The string.
