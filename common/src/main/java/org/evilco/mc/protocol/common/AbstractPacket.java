@@ -52,9 +52,8 @@ public abstract class AbstractPacket implements IPacket {
 
 	/**
 	 * Reads the packet data.
-	 * @param buffer The buffer.
 	 */
-	public void readPacketData (ByteBuf buffer) throws PacketException {
+	public void readPacketData () throws PacketException {
 		this.parsed = true;
 	}
 }
