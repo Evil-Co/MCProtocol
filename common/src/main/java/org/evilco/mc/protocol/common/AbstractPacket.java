@@ -56,4 +56,12 @@ public abstract class AbstractPacket implements IPacket {
 	public void readPacketData () throws PacketException {
 		this.parsed = true;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void write (ByteBuf out) {
+		out.writeBytes (this.buffer);
+	}
 }
