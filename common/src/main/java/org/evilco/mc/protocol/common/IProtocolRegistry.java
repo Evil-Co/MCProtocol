@@ -31,6 +31,7 @@ public interface IProtocolRegistry {
 	 * @param packetClass The packet class.
 	 * @param buffer The packet data.
 	 * @return The packet instance.
+	 * @throws PacketException
 	 */
 	public IPacket createPacket (Class<? extends IPacket> packetClass, ByteBuf buffer) throws PacketException;
 
