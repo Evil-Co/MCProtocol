@@ -31,7 +31,7 @@ public class PacketDataUtility {
 	 * @param value The value.
 	 * @return The size.
 	 */
-	public int getVariableIntegerSize (int value) {
+	public static int getVariableIntegerSize (int value) {
 		if ((value & 0xFFFFFF80) == 0) return 1;
 		if ((value & 0xFFFFC000) == 0) return 2;
 		if ((value & 0xFFE00000) == 0) return 3;
