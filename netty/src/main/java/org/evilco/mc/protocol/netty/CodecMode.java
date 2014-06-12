@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.evilco.mc.protocol.common.codec;
+package org.evilco.mc.protocol.netty;
 
 /**
  * Defines a list of possible ways a codec interacts with it's remote counterpart.

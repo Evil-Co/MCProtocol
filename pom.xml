@@ -132,5 +132,6 @@
 	<!-- Sub-Modules -->
 	<modules>
 		<module>common</module>
+		<module>netty</module>
 	</modules>
 </project>

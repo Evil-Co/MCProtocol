@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.evilco.mc.protocol.common.codec;
+package org.evilco.mc.protocol.netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

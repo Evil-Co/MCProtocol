@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package org.evilco.mc.protocol.common.codec;
+package org.evilco.mc.protocol.netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageCodec;
-import io.netty.handler.codec.MessageToMessageCodec;
 import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
 import org.evilco.mc.protocol.common.IProtocolRegistry;
