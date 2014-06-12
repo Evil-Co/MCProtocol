@@ -42,9 +42,10 @@ public interface IProtocolRegistry {
 	public Class<? extends IPacket> getPacketClass (int packetID) throws UnknownPacketException;
 
 	/**
-	 * Returns the packet identifier assigned to a specific packet..
+	 * Returns the packet identifier assigned to a specific packet.
 	 * @param packetClass The packet class.
 	 * @return The packet identifier.
+	 * @throws UnknownPacketException
 	 */
 	public int getPacketID (Class<? extends IPacket> packetClass) throws UnknownPacketException;
 
