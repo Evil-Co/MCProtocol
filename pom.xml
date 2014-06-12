@@ -43,13 +43,13 @@
 
 	<!-- Issue Reporting -->
 	<issueManagement>
-		<url>https://evilco.atlassian.net/browse/MCFP</url>
+		<url>https://evilco.atlassian.net/browse/MCP</url>
 		<system>JIRA</system>
 	</issueManagement>
 
 	<!-- CI Management -->
 	<ciManagement>
-		<url>https://evilco.atlassian.net/builds/browse/MCFP</url>
+		<url>https://evilco.atlassian.net/builds/browse/MCP</url>
 		<system>Bamboo</system>
 	</ciManagement>
 
