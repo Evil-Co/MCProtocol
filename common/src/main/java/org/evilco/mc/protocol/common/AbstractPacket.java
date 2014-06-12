@@ -61,7 +61,7 @@ public abstract class AbstractPacket implements IPacket {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void write (ByteBuf out) {
+	public void write (@NonNull ByteBuf out) {
 		out.writeBytes (this.buffer);
 	}
 }
