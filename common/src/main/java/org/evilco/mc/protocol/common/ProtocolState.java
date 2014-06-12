@@ -16,10 +16,12 @@
 
 package org.evilco.mc.protocol.common;
 
+import lombok.Getter;
+
 /**
  * Defines a list of valid protocol states.
  */
-public enum ProtocolState {
+public enum ProtocolState implements IProtocolState {
 	/**
 	 * Initial state to ensure server and client can talk to each other.
 	 */
@@ -59,18 +61,20 @@ public enum ProtocolState {
 	/**
 	 * Stores the inbound packet registry.
 	 */
-	public final IProtocolRegistry INBOUND;
+	@Getter
+	protected final IProtocolRegistry inbound;
 
 	/**
 	 * Stores the outbound packet registry.
 	 */
-	public final IProtocolRegistry OUTBOUND;
+	@Getter
+	protected final IProtocolRegistry outbound;
 
 	/**
 	 * Constructs a new ProtocolState instance.
 	 */
 	private ProtocolState () {
-		INBOUND = new SimpleProtocolRegistry (this);
-		OUTBOUND = new SimpleProtocolRegistry (this);
+		inbound = new SimpleProtocolRegistry (this);
+		outbound = new SimpleProtocolRegistry (this);
 	}
 }
