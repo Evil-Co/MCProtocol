@@ -18,6 +18,7 @@ package org.evilco.mc.protocol.common;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
+import lombok.NonNull;
 import org.evilco.mc.protocol.common.error.PacketException;
 
 /**
@@ -45,7 +46,7 @@ public abstract class AbstractPacket implements IPacket {
 	 * Constructs a new AbstractPacket instance from a packet buffer.
 	 * @param buffer The buffer.
 	 */
-	public AbstractPacket (ByteBuf buffer) throws PacketException {
+	public AbstractPacket (@NonNull ByteBuf buffer) throws PacketException {
 		this.buffer = buffer;
 	}
 
