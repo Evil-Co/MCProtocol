@@ -18,6 +18,7 @@ package org.evilco.mc.protocol.common.packet.common;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
+import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 
 /**
@@ -29,6 +30,7 @@ public class KeepAlivePacket implements IPacket {
 	 * The keep alive ID.
 	 */
 	@Getter
+	@Setter
 	private int keepAliveID;
 
 	/**

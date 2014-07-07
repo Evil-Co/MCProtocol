@@ -18,6 +18,7 @@ package org.evilco.mc.protocol.common.packet.server;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
+import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 import org.evilco.mc.protocol.common.utility.PacketDataUtility;
 
@@ -30,24 +31,28 @@ public class HandshakePacket implements IPacket {
 	 * Stores the protocol version.
 	 */
 	@Getter
+	@Setter
 	private int protocolVersion;
 
 	/**
 	 * Stores the server address (the hostname or IP address).
 	 */
 	@Getter
+	@Setter
 	private String serverAddress;
 
 	/**
 	 * Stores the server port.
 	 */
 	@Getter
+	@Setter
 	private int serverPort;
 
 	/**
 	 * Stores the next requested state.
 	 */
 	@Getter
+	@Setter
 	private int nextState;
 
 	/**
