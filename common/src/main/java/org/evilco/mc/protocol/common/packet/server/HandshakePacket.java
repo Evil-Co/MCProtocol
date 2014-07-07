@@ -33,7 +33,7 @@ public class HandshakePacket implements IPacket {
 	 */
 	@Getter
 	@Setter
-	private int protocolVersion;
+	private int protocolVersion = 4;
 
 	/**
 	 * Stores the server address (the hostname or IP address).
@@ -59,16 +59,26 @@ public class HandshakePacket implements IPacket {
 
 	/**
 	 * Constructs a new HandshakePacket.
+	 * @param serverAddress The server address.
+	 * @param serverPort The server port.
+	 * @param nextState The next state.
+	 */
+	public HandshakePacket (@NonNull String serverAddress, int serverPort, int nextState) {
+		this.serverAddress = serverAddress;
+		this.serverPort = serverPort;
+		this.nextState = nextState;
+	}
+
+	/**
+	 * Constructs a new HandshakePacket.
 	 * @param protocolVersion The protocol version.
 	 * @param serverAddress The server address.
 	 * @param serverPort The server port.
 	 * @param nextState The next state.
 	 */
 	public HandshakePacket (int protocolVersion, @NonNull String serverAddress, int serverPort, int nextState) {
+		this (serverAddress, serverPort, nextState);
 		this.protocolVersion = protocolVersion;
-		this.serverAddress = serverAddress;
-		this.serverPort = serverPort;
-		this.nextState = nextState;
 	}
 
 	/**
