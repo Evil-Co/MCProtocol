@@ -18,6 +18,7 @@ package org.evilco.mc.protocol.common.packet.client;
 
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 import org.evilco.mc.protocol.common.utility.PacketDataUtility;
@@ -60,6 +61,7 @@ public class JoinGamePacket implements IPacket {
 	 */
 	@Getter
 	@Setter
+	@NonNull
 	private String levelType;
 
 	/**
@@ -78,7 +80,7 @@ public class JoinGamePacket implements IPacket {
 	 * @param maxPlayers The maximum amount of players.
 	 * @param levelType The level type.
 	 */
-	public JoinGamePacket (int entityID, short gamemode, byte dimension, short difficulty, short maxPlayers, String levelType) {
+	public JoinGamePacket (int entityID, short gamemode, byte dimension, short difficulty, short maxPlayers, @NonNull String levelType) {
 		this.entityID = entityID;
 		this.gamemode = gamemode;
 		this.dimension = dimension;
