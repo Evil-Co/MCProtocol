@@ -1,0 +1,73 @@
+/*
+ * Copyright (C) 2014 Johannes Donath <johannesd@evil-co.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.evilco.mc.protocol.common.packet.client;
+
+import io.netty.buffer.ByteBuf;
+import org.evilco.mc.protocol.common.packet.IPacket;
+
+/**
+ * Represents the spawn position packet.
+ */
+public class SpawnPositionPacket implements IPacket {
+
+	/**
+	 * Stores the X-coordinate
+	 */
+	private int x;
+
+	/**
+	 * Stores the Y-coordinate.
+	 */
+	private int y;
+
+	/**
+	 * Stores the Z-coordinate.
+	 */
+	private int z;
+
+	/**
+	 * Constructs a new SpawnPositionPacket instance.
+	 * @param x The X-coordinate.
+	 * @param y The Y-coordinate.
+	 * @param z The Z-coordinate.
+	 */
+	public SpawnPositionPacket (int x, int y, int z) {
+		this.x = x;
+		this.y = y;
+		this.z= z;
+	}
+
+	/**
+	 * Constructs a new SpawnPositionPacket instance.
+	 * @param buffer The packet buffer.
+	 */
+	public SpawnPositionPacket (ByteBuf buffer) {
+		this.x = buffer.readInt ();
+		this.y = buffer.readInt ();
+		this.z = buffer.readInt ();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void write (ByteBuf out) throws Exception {
+		out.writeInt (this.x);
+		out.writeInt (this.y);
+		out.writeInt (this.z);
+	}
+}
