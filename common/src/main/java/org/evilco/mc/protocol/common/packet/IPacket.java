@@ -26,6 +26,7 @@ public interface IPacket {
 	/**
 	 * Serializes a packet.
 	 * @param out The output buffer.
+	 * @throws Exception
 	 */
-	public void write (ByteBuf out);
+	public void write (ByteBuf out) throws Exception;
 }
