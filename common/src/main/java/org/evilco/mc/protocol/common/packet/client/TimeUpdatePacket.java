@@ -17,6 +17,8 @@
 package org.evilco.mc.protocol.common.packet.client;
 
 import io.netty.buffer.ByteBuf;
+import lombok.Getter;
+import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 
 /**
@@ -27,11 +29,15 @@ public class TimeUpdatePacket implements IPacket {
 	/**
 	 * Stores the world age.
 	 */
+	@Getter
+	@Setter
 	protected long age;
 
 	/**
 	 * The current region time.
 	 */
+	@Getter
+	@Setter
 	protected long time;
 
 	/**
