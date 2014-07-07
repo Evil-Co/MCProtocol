@@ -17,6 +17,8 @@
 package org.evilco.mc.protocol.common.packet.client;
 
 import io.netty.buffer.ByteBuf;
+import lombok.Getter;
+import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 
 /**
@@ -27,16 +29,22 @@ public class SpawnPositionPacket implements IPacket {
 	/**
 	 * Stores the X-coordinate
 	 */
+	@Getter
+	@Setter
 	private int x;
 
 	/**
 	 * Stores the Y-coordinate.
 	 */
+	@Getter
+	@Setter
 	private int y;
 
 	/**
 	 * Stores the Z-coordinate.
 	 */
+	@Getter
+	@Setter
 	private int z;
 
 	/**
