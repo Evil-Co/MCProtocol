@@ -22,6 +22,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageCodec;
 import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
+import lombok.Getter;
 import org.evilco.mc.protocol.common.IProtocolRegistry;
 import org.evilco.mc.protocol.common.ProtocolState;
 import org.evilco.mc.protocol.common.packet.AbstractPacket;
@@ -42,6 +43,7 @@ public class MinecraftCodec extends ByteToMessageCodec<AbstractPacket> {
 	/**
 	 * Stores the active codec mode.
 	 */
+	@Getter
 	protected final CodecMode mode;
 
 	/**
