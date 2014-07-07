@@ -16,8 +16,6 @@
 
 package org.evilco.mc.protocol.common.packet.client;
 
-import com.evilco.mc.nbt.stream.NbtOutputStream;
-import com.evilco.mc.nbt.tag.TagCompound;
 import io.netty.buffer.ByteBuf;
 import lombok.Getter;
 import lombok.NonNull;
@@ -25,7 +23,6 @@ import lombok.Setter;
 import org.evilco.mc.protocol.common.packet.IPacket;
 import org.evilco.mc.protocol.common.packet.common.SlotData;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
